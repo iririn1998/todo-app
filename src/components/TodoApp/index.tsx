@@ -18,9 +18,7 @@ export const TodoApp: FC = () => {
 
   const handleToggle = useCallback((id: string) => {
     setTodos((prev) =>
-      prev.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
-      ),
+      prev.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)),
     );
   }, []);
 
@@ -29,9 +27,7 @@ export const TodoApp: FC = () => {
   }, []);
 
   const handleEdit = useCallback((id: string, text: string) => {
-    setTodos((prev) =>
-      prev.map((todo) => (todo.id === id ? { ...todo, text } : todo)),
-    );
+    setTodos((prev) => prev.map((todo) => (todo.id === id ? { ...todo, text } : todo)));
   }, []);
 
   const completedCount = todos.filter((t) => t.completed).length;
@@ -60,12 +56,7 @@ export const TodoApp: FC = () => {
         </div>
       )}
 
-      <TodoList
-        todos={todos}
-        onToggle={handleToggle}
-        onDelete={handleDelete}
-        onEdit={handleEdit}
-      />
+      <TodoList todos={todos} onToggle={handleToggle} onDelete={handleDelete} onEdit={handleEdit} />
     </div>
   );
 };

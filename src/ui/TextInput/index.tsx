@@ -23,7 +23,5 @@ export const TextInput: FC<TextInputProps> = ({
     .filter(Boolean)
     .join(" ");
 
-  return (
-    <input type="text" className={classNames} disabled={disabled} {...props} />
-  );
+  return <input type="text" className={classNames} disabled={disabled} {...props} />;
 };

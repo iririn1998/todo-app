@@ -98,16 +98,10 @@ export const Overview: Story = {
         }}
       >
         <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
-          <TodoItem
-            todo={{ id: "1", text: "未完了のタスク", completed: false }}
-            {...actions}
-          />
+          <TodoItem todo={{ id: "1", text: "未完了のタスク", completed: false }} {...actions} />
         </ul>
         <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
-          <TodoItem
-            todo={{ id: "2", text: "完了済みのタスク", completed: true }}
-            {...actions}
-          />
+          <TodoItem todo={{ id: "2", text: "完了済みのタスク", completed: true }} {...actions} />
         </ul>
         <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
           <TodoItem

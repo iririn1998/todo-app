@@ -12,12 +12,7 @@ type TodoItemProps = {
   onEdit: (id: string, text: string) => void;
 };
 
-export const TodoItem: FC<TodoItemProps> = ({
-  todo,
-  onToggle,
-  onDelete,
-  onEdit,
-}) => {
+export const TodoItem: FC<TodoItemProps> = ({ todo, onToggle, onDelete, onEdit }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(todo.text);
 
@@ -42,19 +37,13 @@ export const TodoItem: FC<TodoItemProps> = ({
     setIsEditing(true);
   };
 
-  const classNames = [
-    styles["todo-item"],
-    todo.completed && styles["is-completed"],
-  ]
+  const classNames = [styles["todo-item"], todo.completed && styles["is-completed"]]
     .filter(Boolean)
     .join(" ");
 
   return (
     <li className={classNames}>
-      <Checkbox
-        checked={todo.completed}
-        onChange={() => onToggle(todo.id)}
-      />
+      <Checkbox checked={todo.completed} onChange={() => onToggle(todo.id)} />
 
       {isEditing ? (
         <form className={styles["edit-form"]} onSubmit={handleSubmit}>
@@ -81,18 +70,10 @@ export const TodoItem: FC<TodoItemProps> = ({
             <span className={styles["text"]}>{todo.text}</span>
           </div>
           <div className={styles["actions"]}>
-            <Button
-              size="sm"
-              onClick={handleStartEdit}
-              disabled={todo.completed}
-            >
+            <Button size="sm" onClick={handleStartEdit} disabled={todo.completed}>
               編集
             </Button>
-            <Button
-              variant="danger"
-              size="sm"
-              onClick={() => onDelete(todo.id)}
-            >
+            <Button variant="danger" size="sm" onClick={() => onDelete(todo.id)}>
               削除
             </Button>
           </div>

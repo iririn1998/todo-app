@@ -12,17 +12,8 @@ type CheckboxProps = {
   className?: string;
 };
 
-export const Checkbox: FC<CheckboxProps> = ({
-  checked,
-  onChange,
-  label,
-  className,
-}) => {
-  const classNames = [
-    styles["neu-checkbox"],
-    checked && styles["is-checked"],
-    className,
-  ]
+export const Checkbox: FC<CheckboxProps> = ({ checked, onChange, label, className }) => {
+  const classNames = [styles["neu-checkbox"], checked && styles["is-checked"], className]
     .filter(Boolean)
     .join(" ");
 

@@ -4,15 +4,15 @@
 
 ## 技術スタック
 
-| カテゴリ | ツール |
-|---|---|
-| フレームワーク | React 19 + TypeScript |
-| ビルド | Vite 7 |
-| コンポーネントカタログ | Storybook 10 |
-| テスト | Vitest + Playwright |
-| リンター | oxlint |
-| フォーマッター | oxfmt |
-| パッケージマネージャー | pnpm |
+| カテゴリ               | ツール                |
+| ---------------------- | --------------------- |
+| フレームワーク         | React 19 + TypeScript |
+| ビルド                 | Vite 7                |
+| コンポーネントカタログ | Storybook 10          |
+| テスト                 | Vitest + Playwright   |
+| リンター               | oxlint                |
+| フォーマッター         | oxfmt                 |
+| パッケージマネージャー | pnpm                  |
 
 ## 機能
 
@@ -90,13 +90,13 @@ src/
 
 ### トークン一覧
 
-| カテゴリ | プレフィックス | 例 |
-|---|---|---|
-| カラー（ベース） | `--color-` | `--color-bg`, `--color-text` |
-| カラー（Primary） | `--color-primary-` | `--color-primary-bg` |
-| カラー（Success） | `--color-success-` | `--color-success-text` |
-| カラー（Danger） | `--color-danger-` | `--color-danger-text` |
-| スペーシング | `--space-` | `--space-sm`, `--space-md` |
-| 角丸 | `--radius-` | `--radius-sm`, `--radius-lg` |
-| フォントサイズ | `--font-size-` | `--font-size-md`, `--font-size-xl` |
-| トランジション | `--transition-` | `--transition-default` |
+| カテゴリ          | プレフィックス     | 例                                 |
+| ----------------- | ------------------ | ---------------------------------- |
+| カラー（ベース）  | `--color-`         | `--color-bg`, `--color-text`       |
+| カラー（Primary） | `--color-primary-` | `--color-primary-bg`               |
+| カラー（Success） | `--color-success-` | `--color-success-text`             |
+| カラー（Danger）  | `--color-danger-`  | `--color-danger-text`              |
+| スペーシング      | `--space-`         | `--space-sm`, `--space-md`         |
+| 角丸              | `--radius-`        | `--radius-sm`, `--radius-lg`       |
+| フォントサイズ    | `--font-size-`     | `--font-size-md`, `--font-size-xl` |
+| トランジション    | `--transition-`    | `--transition-default`             |

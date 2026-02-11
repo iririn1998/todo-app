@@ -10,12 +10,7 @@ type TodoListProps = {
   onEdit: (id: string, text: string) => void;
 };
 
-export const TodoList: FC<TodoListProps> = ({
-  todos,
-  onToggle,
-  onDelete,
-  onEdit,
-}) => {
+export const TodoList: FC<TodoListProps> = ({ todos, onToggle, onDelete, onEdit }) => {
   if (todos.length === 0) {
     return (
       <div className={styles["empty"]}>
