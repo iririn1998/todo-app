@@ -19,24 +19,24 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^5.0.1",
+    "@storybook/addon-a11y": "^10.2.8",
+    "@storybook/addon-docs": "^10.2.8",
+    "@storybook/addon-vitest": "^10.2.8",
+    "@storybook/react-vite": "^10.2.8",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "@vitest/browser-playwright": "^4.0.18",
+    "@vitest/coverage-v8": "^4.0.18",
     "oxfmt": "^0.28.0",
     "oxlint": "^1.43.0",
+    "playwright": "^1.58.2",
+    "storybook": "^10.2.8",
     "typescript": "~5.9.3",
     "vite": "^7.2.4",
-    "storybook": "^10.2.8",
-    "@storybook/react-vite": "^10.2.8",
-    "@chromatic-com/storybook": "^5.0.1",
-    "@storybook/addon-vitest": "^10.2.8",
-    "@storybook/addon-a11y": "^10.2.8",
-    "@storybook/addon-docs": "^10.2.8",
-    "vitest": "^4.0.18",
-    "playwright": "^1.58.2",
-    "@vitest/browser-playwright": "^4.0.18",
-    "@vitest/coverage-v8": "^4.0.18"
+    "vitest": "^4.0.18"
   },
   "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a"
 }
