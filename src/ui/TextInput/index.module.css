@@ -1,0 +1,65 @@
+@import "../../styles/tokens.css";
+
+/* =============================================
+   RSCSS — neu-text-input コンポーネント
+   ============================================= */
+
+.neu-text-input {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  transition: var(--transition-default);
+  box-shadow:
+    inset 3px 3px 6px var(--color-shadow-dark),
+    inset -3px -3px 6px var(--color-shadow-light);
+
+  &::placeholder {
+    color: var(--color-text-muted);
+    font-weight: 400;
+  }
+
+  &:focus {
+    box-shadow:
+      inset 4px 4px 8px var(--color-shadow-dark),
+      inset -4px -4px 8px var(--color-shadow-light);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-text);
+    outline-offset: 2px;
+  }
+
+  /* ---------- バリアント: サイズ ---------- */
+
+  &.is-sm {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-sm);
+  }
+
+  &.is-md {
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--font-size-md);
+  }
+
+  &.is-lg {
+    padding: var(--space-lg) var(--space-xl);
+    font-size: var(--font-size-lg);
+    border-radius: var(--radius-lg);
+  }
+
+  /* ---------- 状態 ---------- */
+
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
