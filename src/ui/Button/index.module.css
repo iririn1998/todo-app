@@ -1,0 +1,151 @@
+@import "../../styles/tokens.css";
+
+/* =============================================
+   RSCSS — neu-button コンポーネント
+   ============================================= */
+
+.neu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+  transition: var(--transition-default);
+  box-shadow:
+    6px 6px 12px var(--color-shadow-dark),
+    -6px -6px 12px var(--color-shadow-light);
+  user-select: none;
+
+  &:hover:not(:disabled) {
+    box-shadow:
+      4px 4px 8px var(--color-shadow-dark),
+      -4px -4px 8px var(--color-shadow-light);
+  }
+
+  &:active:not(:disabled) {
+    box-shadow:
+      inset 3px 3px 6px var(--color-shadow-dark),
+      inset -3px -3px 6px var(--color-shadow-light);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-text);
+    outline-offset: 3px;
+  }
+
+  /* ---------- エレメント ---------- */
+
+  & > .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15em;
+    line-height: 1;
+  }
+
+  & > .label {
+    line-height: 1;
+  }
+
+  /* ---------- バリアント: サイズ ---------- */
+
+  &.is-sm {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    border-radius: var(--radius-sm);
+  }
+
+  &.is-md {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+
+  &.is-lg {
+    padding: 16px 36px;
+    font-size: 1.1rem;
+    border-radius: var(--radius-lg);
+  }
+
+  /* ---------- バリアント: カラー ---------- */
+
+  &.is-default {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  &.is-primary {
+    background: var(--color-primary-bg);
+    color: var(--color-primary-text);
+    box-shadow:
+      6px 6px 12px var(--color-primary-shadow-dark),
+      -6px -6px 12px var(--color-primary-shadow-light);
+
+    &:hover:not(:disabled) {
+      box-shadow:
+        4px 4px 8px var(--color-primary-shadow-dark),
+        -4px -4px 8px var(--color-primary-shadow-light);
+    }
+
+    &:active:not(:disabled) {
+      box-shadow:
+        inset 3px 3px 6px var(--color-primary-shadow-dark),
+        inset -3px -3px 6px var(--color-primary-shadow-light);
+    }
+  }
+
+  &.is-danger {
+    background: var(--color-danger-bg);
+    color: var(--color-danger-text);
+    box-shadow:
+      6px 6px 12px var(--color-danger-shadow-dark),
+      -6px -6px 12px var(--color-danger-shadow-light);
+
+    &:hover:not(:disabled) {
+      box-shadow:
+        4px 4px 8px var(--color-danger-shadow-dark),
+        -4px -4px 8px var(--color-danger-shadow-light);
+    }
+
+    &:active:not(:disabled) {
+      box-shadow:
+        inset 3px 3px 6px var(--color-danger-shadow-dark),
+        inset -3px -3px 6px var(--color-danger-shadow-light);
+    }
+  }
+
+  /* ---------- バリアント: 状態 ---------- */
+
+  &.is-pressed {
+    box-shadow:
+      inset 3px 3px 6px var(--color-shadow-dark),
+      inset -3px -3px 6px var(--color-shadow-light);
+
+    &.is-primary {
+      box-shadow:
+        inset 3px 3px 6px var(--color-primary-shadow-dark),
+        inset -3px -3px 6px var(--color-primary-shadow-light);
+    }
+
+    &.is-danger {
+      box-shadow:
+        inset 3px 3px 6px var(--color-danger-shadow-dark),
+        inset -3px -3px 6px var(--color-danger-shadow-light);
+    }
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    box-shadow:
+      2px 2px 4px var(--color-shadow-dark),
+      -2px -2px 4px var(--color-shadow-light);
+  }
+}

@@ -1,0 +1,28 @@
+/* =============================================
+   デザイントークン — ニューモーフィズム
+   ============================================= */
+:root {
+  /* ── ベース ── */
+  --color-bg: #e0e5ec;
+  --color-text: #4a5568;
+  --color-shadow-dark: #a3b1c6;
+  --color-shadow-light: #ffffff;
+
+  /* ── Primary ── */
+  --color-primary-bg: #d0d8e8;
+  --color-primary-text: #4a6fa5;
+  --color-primary-shadow-dark: #a8b5cc;
+  --color-primary-shadow-light: #e8edf5;
+
+  /* ── Danger ── */
+  --color-danger-bg: #ebd5d5;
+  --color-danger-text: #c0392b;
+  --color-danger-shadow-dark: #c4a8a8;
+  --color-danger-shadow-light: #f9ecec;
+
+  /* ── 共通値 ── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --transition-default: all 0.2s ease;
+}
