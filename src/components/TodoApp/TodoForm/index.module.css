@@ -14,3 +14,9 @@
   flex: 1;
   min-width: 0;
 }
+
+.error-message {
+  margin: var(--space-xs) 0 0;
+  color: var(--color-danger, #e53e3e);
+  font-size: var(--font-size-sm, 0.875rem);
+}
