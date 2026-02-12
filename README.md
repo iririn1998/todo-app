@@ -1,73 +1,102 @@
-# React + TypeScript + Vite
+# TODO App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ニューモーフィズムデザインの TODO アプリケーションです。
 
-Currently, two official plugins are available:
+## 技術スタック
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| カテゴリ               | ツール                |
+| ---------------------- | --------------------- |
+| フレームワーク         | React 19 + TypeScript |
+| ビルド                 | Vite 7                |
+| コンポーネントカタログ | Storybook 10          |
+| テスト                 | Vitest + Playwright   |
+| リンター               | oxlint                |
+| フォーマッター         | oxfmt                 |
+| パッケージマネージャー | pnpm                  |
 
-## React Compiler
+## 機能
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **追加** — テキスト入力フォームから新しい TODO を作成
+- **一覧表示** — 全 TODO をリスト表示（件数・完了数のサマリー付き）
+- **編集** — インライン編集で TODO のテキストを変更
+- **削除** — 不要な TODO を即時削除
+- **完了切替** — チェックボックスで完了/未完了を切り替え
 
-## Expanding the ESLint configuration
+## セットアップ
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 開発コマンド
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+```bash
+# 開発サーバー起動
+pnpm dev
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+# プロダクションビルド
+pnpm build
+
+# ビルドプレビュー
+pnpm preview
+
+# Storybook 起動
+pnpm storybook
+
+# Storybook ビルド
+pnpm build-storybook
+
+# リント
+pnpm lint
+
+# リント（自動修正）
+pnpm lint:fix
+
+# フォーマット
+pnpm format
+
+# フォーマットチェック
+pnpm format:check
 ```
+
+## ディレクトリ構成
+
+```
+src/
+├── components/          # アプリケーションコンポーネント
+│   └── TodoApp/
+│       ├── index.tsx             # メインコンポーネント（状態管理）
+│       ├── index.module.css
+│       ├── index.stories.tsx
+│       ├── types.ts              # Todo 型定義
+│       ├── TodoForm/             # TODO 追加フォーム
+│       ├── TodoItem/             # TODO 個別アイテム（編集・削除）
+│       └── TodoList/             # TODO 一覧表示
+├── ui/                  # 汎用 UI コンポーネント
+│   ├── Button/
+│   ├── Checkbox/
+│   └── TextInput/
+└── styles/
+    └── tokens.css       # デザイントークン
+```
+
+## デザインシステム
+
+ニューモーフィズムスタイルのデザインシステムを採用しています。
+
+- **デザイントークン** — `src/styles/tokens.css` にカラー・スペーシング・角丸・フォントサイズなどの CSS カスタムプロパティを定義
+- **CSS Modules** — コンポーネントごとに `index.module.css` でスコープ付きスタイルを管理
+- **RSCSS 命名規則** — `.neu-button`、`.is-primary` のようなコンポーネント・バリアント命名
+
+### トークン一覧
+
+| カテゴリ          | プレフィックス     | 例                                 |
+| ----------------- | ------------------ | ---------------------------------- |
+| カラー（ベース）  | `--color-`         | `--color-bg`, `--color-text`       |
+| カラー（Primary） | `--color-primary-` | `--color-primary-bg`               |
+| カラー（Success） | `--color-success-` | `--color-success-text`             |
+| カラー（Danger）  | `--color-danger-`  | `--color-danger-text`              |
+| スペーシング      | `--space-`         | `--space-sm`, `--space-md`         |
+| 角丸              | `--radius-`        | `--radius-sm`, `--radius-lg`       |
+| フォントサイズ    | `--font-size-`     | `--font-size-md`, `--font-size-xl` |
+| トランジション    | `--transition-`    | `--transition-default`             |

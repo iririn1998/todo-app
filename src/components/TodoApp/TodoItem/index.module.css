@@ -1,0 +1,58 @@
+@import "../../../styles/tokens.css";
+
+/* =============================================
+   RSCSS — todo-item コンポーネント
+   ============================================= */
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  transition: var(--transition-default);
+  box-shadow:
+    4px 4px 8px var(--color-shadow-dark),
+    -4px -4px 8px var(--color-shadow-light);
+
+  &.is-completed {
+    & .text {
+      text-decoration: line-through;
+      color: var(--color-text-muted);
+    }
+  }
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.text {
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  word-break: break-word;
+  transition: var(--transition-default);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+/* ── 編集モード ── */
+
+.edit-form {
+  flex: 1;
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+  min-width: 0;
+}
+
+.edit-input {
+  flex: 1;
+  min-width: 0;
+}

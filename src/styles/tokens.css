@@ -5,6 +5,7 @@
   /* ── ベース ── */
   --color-bg: #e0e5ec;
   --color-text: #4a5568;
+  --color-text-muted: #8896a8;
   --color-shadow-dark: #a3b1c6;
   --color-shadow-light: #ffffff;
 
@@ -14,15 +15,41 @@
   --color-primary-shadow-dark: #a8b5cc;
   --color-primary-shadow-light: #e8edf5;
 
+  /* ── Success ── */
+  --color-success-bg: #d5e8d5;
+  --color-success-text: #27ae60;
+  --color-success-shadow-dark: #a8c4a8;
+  --color-success-shadow-light: #ecf9ec;
+
   /* ── Danger ── */
   --color-danger-bg: #ebd5d5;
   --color-danger-text: #c0392b;
   --color-danger-shadow-dark: #c4a8a8;
   --color-danger-shadow-light: #f9ecec;
 
-  /* ── 共通値 ── */
+  /* ── 角丸 ── */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* ── スペーシング ── */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* ── フォントサイズ ── */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.85rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+
+  /* ── トランジション ── */
   --transition-default: all 0.2s ease;
+  --transition-slow: all 0.3s ease;
 }
