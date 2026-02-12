@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { type FC, type FormEvent, useState } from "react";
 import { Button } from "../../../ui/Button";
 import { Checkbox } from "../../../ui/Checkbox";
@@ -37,12 +38,8 @@ export const TodoItem: FC<TodoItemProps> = ({ todo, onToggle, onDelete, onEdit }
     setIsEditing(true);
   };
 
-  const classNames = [styles["todo-item"], todo.completed && styles["is-completed"]]
-    .filter(Boolean)
-    .join(" ");
-
   return (
-    <li className={classNames}>
+    <li className={clsx(styles["todo-item"], todo.completed && styles["is-completed"])}>
       <Checkbox checked={todo.completed} onChange={() => onToggle(todo.id)} />
 
       {isEditing ? (

@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import type { ComponentProps, FC, ReactNode } from "react";
 import styles from "./index.module.css";
 
@@ -25,19 +26,19 @@ export const Button: FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  const classNames = [
-    styles["neu-button"],
-    styles[`is-${variant}`],
-    styles[`is-${size}`],
-    pressed && styles["is-pressed"],
-    disabled && styles["is-disabled"],
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
-
   return (
-    <button className={classNames} disabled={disabled} {...props}>
+    <button
+      className={clsx(
+        styles["neu-button"],
+        styles[`is-${variant}`],
+        styles[`is-${size}`],
+        pressed && styles["is-pressed"],
+        disabled && styles["is-disabled"],
+        className,
+      )}
+      disabled={disabled}
+      {...props}
+    >
       {icon && <span className={styles["icon"]}>{icon}</span>}
       {children && <span className={styles["label"]}>{children}</span>}
     </button>

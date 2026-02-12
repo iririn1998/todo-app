@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import type { FC } from "react";
 import styles from "./index.module.css";
 
@@ -13,12 +14,8 @@ type CheckboxProps = {
 };
 
 export const Checkbox: FC<CheckboxProps> = ({ checked, onChange, label, className }) => {
-  const classNames = [styles["neu-checkbox"], checked && styles["is-checked"], className]
-    .filter(Boolean)
-    .join(" ");
-
   return (
-    <label className={classNames}>
+    <label className={clsx(styles["neu-checkbox"], checked && styles["is-checked"], className)}>
       <span className={styles["box"]}>
         <input
           type="checkbox"

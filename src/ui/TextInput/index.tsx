@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import type { ComponentProps, FC } from "react";
 import styles from "./index.module.css";
 
@@ -14,14 +15,17 @@ export const TextInput: FC<TextInputProps> = ({
   disabled,
   ...props
 }) => {
-  const classNames = [
-    styles["neu-text-input"],
-    styles[`is-${inputSize}`],
-    disabled && styles["is-disabled"],
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
-
-  return <input type="text" className={classNames} disabled={disabled} {...props} />;
+  return (
+    <input
+      type="text"
+      className={clsx(
+        styles["neu-text-input"],
+        styles[`is-${inputSize}`],
+        disabled && styles["is-disabled"],
+        className,
+      )}
+      disabled={disabled}
+      {...props}
+    />
+  );
 };
