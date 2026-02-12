@@ -51,23 +51,16 @@ export const TodoForm: FC<TodoFormProps> = ({ onAdd }) => {
                 onBlur={field.handleBlur}
                 placeholder="新しいTODOを入力..."
               />
-              {field.state.meta.isTouched &&
-                field.state.meta.errors.length > 0 && (
-                  <p className={styles["error-message"]}>
-                    {field.state.meta.errors.join(", ")}
-                  </p>
-                )}
+              {field.state.meta.isTouched && field.state.meta.errors.length > 0 && (
+                <p className={styles["error-message"]}>{field.state.meta.errors.join(", ")}</p>
+              )}
             </>
           )}
         </form.Field>
       </div>
       <form.Subscribe selector={(state) => [state.canSubmit, state.isSubmitting]}>
         {([canSubmit, isSubmitting]) => (
-          <Button
-            type="submit"
-            variant="primary"
-            disabled={!canSubmit || isSubmitting}
-          >
+          <Button type="submit" variant="primary" disabled={!canSubmit || isSubmitting}>
             {isSubmitting ? "追加中..." : "追加"}
           </Button>
         )}
